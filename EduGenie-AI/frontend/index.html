@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduGenie - AI Learning Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<h1>🎓 EduGenie</h1><p class="subtitle">Your Gemini Powered Learning Buddy</p>
+<div class="tabs">
+<button class="tab active" onclick="openTab('ask')">Ask Doubt</button>
+<button class="tab" onclick="openTab('explain')">Explain Concept</button>
+<button class="tab" onclick="openTab('quiz')">Generate Quiz</button>
+<button class="tab" onclick="openTab('path')">Learning Path</button>
+<button class="tab" onclick="openTab('summary')">Summarize</button>
+</div>
+<div id="ask" class="tab-content active">
+<textarea id="askQ" placeholder="Enter your doubt... Eg: What is Python?"></textarea>
+<button onclick="callAPI('ask')">Ask EduGenie</button><div id="askAns" class="answer-box"></div>
+</div>
+<div id="explain" class="tab-content">
+<input id="expTopic" placeholder="Topic Eg: Photosynthesis"><select id="expLevel"><option>beginner</option><option>intermediate</option><option>advanced</option></select>
+<button onclick="callAPI('explain')">Explain</button><div id="expAns" class="answer-box"></div>
+</div>
+<div id="quiz" class="tab-content">
+<input id="quizTopic" placeholder="Topic Eg: Python"><input id="quizNum" type="number" value="5"><select id="quizDiff"><option>easy</option><option selected>medium</option><option>hard</option></select>
+<button onclick="callAPI('quiz')">Generate Quiz</button><div id="quizAns" class="answer-box"></div>
+</div>
+<div id="path" class="tab-content">
+<input id="pathGoal" placeholder="Goal Eg: Become Data Scientist"><input id="pathLevel" placeholder="Current Level"><input id="pathDur" placeholder="Duration Eg: 4 weeks">
+<button onclick="callAPI('path')">Create Path</button><div id="pathAns" class="answer-box"></div>
+</div>
+<div id="summary" class="tab-content">
+<textarea id="sumText" placeholder="Paste long text to summarize..."></textarea><select id="sumLen"><option>short</option><option>medium</option><option>long</option></select>
+<button onclick="callAPI('summary')">Summarize</button><div id="sumAns" class="answer-box"></div>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
